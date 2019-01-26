@@ -8,9 +8,9 @@ using System;
 public class Dialogue : ScriptableObject {
 
     [System.Serializable]
-    public struct DialogueSettings {
+    public class DialogueSettings {
         [Header("Dialogue Settings:")]
-        public float dialogueSpeed;
+        public float dialogueSpeed = 0.05f;
 
         [Header("White Space:")]
         public bool useWhitespaceDelay;
@@ -21,7 +21,7 @@ public class Dialogue : ScriptableObject {
     }
 
     [System.Serializable]
-    public struct DialogueContainer {
+    public class DialogueContainer {
         [SerializeField] private string name;
 
         [TextArea(5, 10)]
