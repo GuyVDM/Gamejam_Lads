@@ -13,10 +13,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   texts:
   - name: 
-    _Text: Finally that sound stops.
+    _Text: Should I turn the alarm off?
     settings:
       dialogueSpeed: 0.05
       useWhitespaceDelay: 0
       whiteSpaceTime: 0
+      hasChoices: 1
+      choices: {fileID: 0}
       useSoundWhenAllCaps: 0
   functionToCallAfterDialogue: {fileID: 0}

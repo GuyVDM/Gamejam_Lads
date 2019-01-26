@@ -97,7 +97,12 @@ public class QuestManager : MonoBehaviour
 
     public void FinishQuest(string _Indentifier)
     {
-        FinishQuest(FindQuest(_Indentifier));
+        FinishQuest(FindQuest(_Indentifier), "Completed!");
+    }
+
+    public void FinishQuestFailed(string _Indentifier)
+    {
+        FinishQuest(FindQuest(_Indentifier), "Failed!");
     }
 
     /// <summary>
@@ -118,29 +123,19 @@ public class QuestManager : MonoBehaviour
     /// Removes a Quest from the active Quest list.
     /// </summary>
     /// <param name="questToFinish"></param>
-    private void FinishQuest(Quest questToFinish)
+    private void FinishQuest(Quest questToFinish, string completionStatus)
     {
         if (activeQuests.Contains(questToFinish)) {
             questToFinish.Finish();
-            StartCoroutine(Unload(FindQuest(questToFinish.nextQuestID)));
+            StartCoroutine(Unload(FindQuest(questToFinish.nextQuestID), completionStatus));
             activeQuests.Remove(questToFinish);
-            UIManager.instance.SetQuestUI(UIManager.instance.questNameText.text, "Completed!", true);
+            UIManager.instance.SetQuestUI(UIManager.instance.questNameText.text, completionStatus, true);
         }
     }
 
-    private void FinishQuestFailed(Quest questToFinish) {
-        if (activeQuests.Contains(questToFinish)) {
-            questToFinish.Finish();
-            StartCoroutine(Unload(FindQuest(questToFinish.nextQuestID)));
-            activeQuests.Remove(questToFinish);
-            UIManager.instance.SetQuestUI(UIManager.instance.questNameText.text, "Failed!", true);
-        }
-    }
-
-
-    private IEnumerator Unload(Quest _NewQuest) {
+    private IEnumerator Unload(Quest _NewQuest, string completionStatus) {
         yield return new WaitForSeconds(UIManager.questUIScreenTime);
-        UIManager.instance.SetQuestUI(UIManager.instance.questNameText.text, "Completed!", false);
+        UIManager.instance.SetQuestUI(UIManager.instance.questNameText.text, completionStatus, false);
 
         if (_NewQuest != null) {
             yield return new WaitForSeconds(UIManager.questUIScreenTime);
