@@ -13,34 +13,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   texts:
   - name: Box_Text_001
-    _Text: 
+    _Text: Sample.
     settings:
-      dialogueSpeed: 0
+      dialogueSpeed: 0.05
       useWhitespaceDelay: 0
+      whiteSpaceTime: 0
       useSoundWhenAllCaps: 0
   - name: Box_Text_002
-    _Text: 
+    _Text: Sample. Sample.
     settings:
-      dialogueSpeed: 0
+      dialogueSpeed: 0.05
       useWhitespaceDelay: 0
+      whiteSpaceTime: 0
       useSoundWhenAllCaps: 0
   - name: Box_Text_003
-    _Text: 
+    _Text: Sample. Sample. Sample.
     settings:
-      dialogueSpeed: 0
+      dialogueSpeed: 0.05
       useWhitespaceDelay: 0
-      useSoundWhenAllCaps: 0
-  - name: Box_Text_004
-    _Text: 
-    settings:
-      dialogueSpeed: 0
-      useWhitespaceDelay: 0
-      useSoundWhenAllCaps: 0
-  - name: Box_Text_005
-    _Text: 
-    settings:
-      dialogueSpeed: 0
-      useWhitespaceDelay: 0
+      whiteSpaceTime: 0
       useSoundWhenAllCaps: 0
   functionToCallAfterDialogue:
     m_PersistentCalls:

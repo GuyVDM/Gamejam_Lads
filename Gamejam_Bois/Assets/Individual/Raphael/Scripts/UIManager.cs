@@ -2,15 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UIManager : MonoBehaviour {
+
+    public static float questUIScreenTime = 4;
 
     public static UIManager instance;
 
     [Header("Quest Message System")]
     public Animator questMessageAnimator;
-    public Text questNameText;
-    public Text questDiscriptionText;
+    public TextMeshProUGUI questNameText;
+    public TextMeshProUGUI questDiscriptionText;
 
     private void Awake()
     {
@@ -28,8 +31,12 @@ public class UIManager : MonoBehaviour {
     {
         questNameText.text = questName;
         questDiscriptionText.text = questDiscription;
-
-        //Start Quest message animation;
+        SetQuestUI(questName, questDiscription, true);
     }
 
+    private void SetQuestUI(string _Name, string _Description, bool _State) {
+        questNameText.text = _Name;
+        questDiscriptionText.text = _Description;
+        questMessageAnimator.SetBool("State", _State);
+    }
 }

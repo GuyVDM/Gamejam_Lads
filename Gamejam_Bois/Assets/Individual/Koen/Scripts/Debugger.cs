@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class Debugger : MonoBehaviour {
 
     [Header("Dialogue Test:")]
+    public string questName;
     public UnityEvent debugCall;
     public List<Dialogue> testDialogue;
     public int loadIndex = 0;
@@ -21,5 +22,9 @@ public class Debugger : MonoBehaviour {
 
     public void LoadDialogueExtern() {
         DialogueManager.diaManager.LoadDialogue(testDialogue[loadIndex]);
+    }
+
+    public void StartQuest() {
+        QuestManager.questManager.StartQuest(QuestManager.questManager.FindQuest(questName));
     }
 }

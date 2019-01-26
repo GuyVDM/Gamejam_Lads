@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class QuestManager : MonoBehaviour
 {
-    public static QuestManager instance;
+    public static QuestManager questManager;
 
     [System.Serializable]
     public class Quest
@@ -38,9 +38,9 @@ public class QuestManager : MonoBehaviour
 
     public void Awake()
     {
-        if (instance == null)
+        if (questManager == null)
         {
-            instance = this;
+            questManager = this;
         }
         else
         {
@@ -91,10 +91,11 @@ public class QuestManager : MonoBehaviour
     /// <param name="questToStart"></param>
     public void StartQuest(Quest questToStart)
     {
-        questToStart.Begin();
-        activeQuests.Add(questToStart);
-
-        UIManager.instance.SendQuestMessage(questToStart.questDisplayName, questToStart.questDiscription);
+        if (!activeQuests.Contains(questToStart)) {
+            questToStart.Begin();
+            activeQuests.Add(questToStart);
+            UIManager.instance.SendQuestMessage(questToStart.questDisplayName, questToStart.questDiscription);
+        }
     }
 
     /// <summary>
@@ -105,5 +106,6 @@ public class QuestManager : MonoBehaviour
     {
         questToFinish.Finish();
         activeQuests.Remove(questToFinish);
+        UIManager.instance.SendQuestMessage("", "Completed!");
     }
 }

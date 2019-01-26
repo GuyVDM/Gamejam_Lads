@@ -15,16 +15,16 @@ public class InteractableObject : MonoBehaviour {
 
     public void OnInteraction()
     {
-        for (int i = 0; i < interactionOptions.Length; i++)
+        for (int i = 1; i < interactionOptions.Length; i++)
         {
-            if (QuestManager.instance.IsQuestActive(interactionOptions[i].onActiveQuest))
+            if (QuestManager.questManager.IsQuestActive(interactionOptions[i].onActiveQuest))
             {
-                //Send dialogue to dialogue system
+                DialogueManager.diaManager.LoadDialogue(interactionOptions[i].dialogue);
                 return;
             }
         }
 
-        //Send default to dialogue system;
+        DialogueManager.diaManager.LoadDialogue(interactionOptions[0].dialogue);
         return;
     }
 }
