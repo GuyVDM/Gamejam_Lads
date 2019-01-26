@@ -13,6 +13,7 @@ public class TeleportationField : MonoBehaviour {
 
     public IEnumerator Teleport(Transform player)
     {
+        GameManager.gameManager.gameIsBusy = true;
         StartCoroutine(FadeToBlack.instance.FadeTo());
         yield return new WaitForSeconds(0.5f);
 
@@ -20,5 +21,6 @@ public class TeleportationField : MonoBehaviour {
         player.rotation = teleportTo.transform.rotation;
 
         StartCoroutine(FadeToBlack.instance.FadeFrom());
+        GameManager.gameManager.gameIsBusy = false;
     }
 }

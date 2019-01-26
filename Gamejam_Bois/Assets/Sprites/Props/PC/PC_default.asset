@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 340caa0dc07aa7049b76522acbadca44, type: 3}
+  m_Name: PC_default
+  m_EditorClassIdentifier: 
+  texts:
+  - name: 
+    _Text: 'This computer of mine definitely has grown old..
+
+'
+    settings:
+      dialogueSpeed: 0.02
+      useWhitespaceDelay: 0
+      whiteSpaceTime: 0
+      hasChoices: 0
+      choices: {fileID: 0}
+      useSoundWhenAllCaps: 0
+  - name: 
+    _Text: 'Doubt that it would even run paint at this point.
+
+'
+    settings:
+      dialogueSpeed: 0
+      useWhitespaceDelay: 0
+      whiteSpaceTime: 0
+      hasChoices: 0
+      choices: {fileID: 0}
+      useSoundWhenAllCaps: 0
+  functionToCallAfterDialogue: {fileID: 0}

@@ -29,7 +29,6 @@ public class DialogueManager : MonoBehaviour {
     #region Manager Initialization
     private void Start() {
         InitializeManager(); //Sets up the manager;
-        sign.SetActive(false);
     }
 
     private void InitializeManager() {
@@ -81,6 +80,7 @@ public class DialogueManager : MonoBehaviour {
     private void SetupCurrentBox() {
         characterIndex = 0;
         timeBase = currentDialogue.texts[dialoguePageIndex].settings.dialogueSpeed; //Sets up the speed to load the dialogue at;
+        timer = timeBase;
         chatbox_Text.text = "";
 
         if (currentDialogue.texts[dialoguePageIndex].settings.hasChoices == true && currentDialogue.texts[dialoguePageIndex].settings.choices != null) {

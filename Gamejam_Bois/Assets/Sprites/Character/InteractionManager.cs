@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class InteractionManager : MonoBehaviour {
 
+    public GameObject sign;
 	public Animator myAnim {  get { return GetComponent<Animator>(); } }
     public Vector3 toReturn;
     private RaycastHit2D hit;
@@ -14,11 +15,30 @@ public class InteractionManager : MonoBehaviour {
             Interact();
 
         GetRayDirection();
+        GetInfo();
+    }
+
+    private void GetInfo()
+    {
+        Debug.DrawRay(transform.position, toReturn * 1, Color.blue);
+        hit = Physics2D.Raycast(transform.position, toReturn, 0.15f);
+
+        if (hit.transform != null)
+        {
+            if (hit.transform.GetComponent<InteractableObject>() != null)
+            {
+                sign.SetActive(true);
+                return;
+            }
+        }
+
+        sign.SetActive(false);
     }
 
     private void Interact()
     {
-        hit = Physics2D.Raycast(transform.position, toReturn);
+        Debug.DrawRay(transform.position, toReturn * 1, Color.blue);
+        hit = Physics2D.Raycast(transform.position, toReturn, 0.15f);
 
         if (hit.transform != null)
         {
@@ -26,6 +46,7 @@ public class InteractionManager : MonoBehaviour {
             {
                 hit.transform.GetComponent<InteractableObject>().OnInteraction();
             }
+            return;
         }
     }
 
