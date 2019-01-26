@@ -603,7 +603,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 408018463}
-  - component: {fileID: 408018458}
   - component: {fileID: 408018462}
   - component: {fileID: 408018461}
   - component: {fileID: 408018460}
@@ -615,37 +614,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &408018458
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114392393177478852, guid: da3f42f9302fe6746ba61d9604583e05,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 408018457}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb397cf6e995f9148ab6748f0f0c359e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  debugCall:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 408018458}
-        m_MethodName: LoadDialogueExtern
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  testDialogue:
-  - {fileID: 11400000, guid: bf5512e7153e594478e5e9cb373c8f7c, type: 2}
-  loadIndex: 0
 --- !u!114 &408018459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1045,7 +1013,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 641848382}
-  - component: {fileID: 641848381}
   - component: {fileID: 641848380}
   m_Layer: 0
   m_Name: Functions
@@ -1057,8 +1024,7 @@ GameObject:
 --- !u!114 &641848380
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114674187123835604, guid: da3f42f9302fe6746ba61d9604583e05,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 641848379}
   m_Enabled: 1
@@ -1066,42 +1032,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f934130c1fdf5b4cbf72e0f101c7353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indentifier: Second_Quest_Finish
-  _FunctionReference: {fileID: 11400000, guid: 6190845d5872bbf4b83db7650abb3d2b, type: 2}
+  indentifier: Woke
+  _FunctionReference: {fileID: 11400000, guid: b97febf4be3e8bc46953a8ad31eee0de, type: 2}
   functions:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 408018458}
-        m_MethodName: FinishQuest
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Hygiene
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &641848381
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114270117447981950, guid: da3f42f9302fe6746ba61d9604583e05,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 641848379}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f934130c1fdf5b4cbf72e0f101c7353, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  indentifier: First_Quest_Finish
-  _FunctionReference: {fileID: 11400000, guid: bf5512e7153e594478e5e9cb373c8f7c, type: 2}
-  functions:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 408018458}
+      - m_Target: {fileID: 408018460}
         m_MethodName: FinishQuest
         m_Mode: 5
         m_Arguments:
@@ -2062,6 +1998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4175b126a6074484b9f3b94b0a874f19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toReturn: {x: 0, y: 0, z: 0}
 --- !u!114 &1944353275
 MonoBehaviour:
   m_ObjectHideFlags: 0

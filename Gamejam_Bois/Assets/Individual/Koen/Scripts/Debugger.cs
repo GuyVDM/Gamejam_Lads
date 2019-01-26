@@ -22,12 +22,4 @@ public class Debugger : MonoBehaviour {
     public void LoadDialogueExtern() {
         DialogueManager.diaManager.LoadDialogue(testDialogue[loadIndex]);
     }
-
-    public void StartQuest(string _Indentifier) {
-        QuestManager.questManager.StartQuest(QuestManager.questManager.FindQuest(_Indentifier));
-    }
-
-    public void FinishQuest(string _Indentifier) {
-        QuestManager.questManager.FinishQuest(QuestManager.questManager.FindQuest(_Indentifier));
-    }
 }

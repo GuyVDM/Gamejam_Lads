@@ -47,6 +47,9 @@ public class QuestManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+
+        StartQuest(FindQuest("Woke"));
     }
 
     /// <summary>
@@ -86,11 +89,22 @@ public class QuestManager : MonoBehaviour
         return false;
     }
 
+
+    public void StartQuest(string _Indentifier)
+    {
+        StartQuest(FindQuest(_Indentifier));
+    }
+
+    public void FinishQuest(string _Indentifier)
+    {
+        FinishQuest(FindQuest(_Indentifier));
+    }
+
     /// <summary>
     /// Adds a Quest to the activeQuests list. Also sends the Quest message to UI Manager
     /// </summary>
     /// <param name="questToStart"></param>
-    public void StartQuest(Quest questToStart)
+    private void StartQuest(Quest questToStart)
     {
         if (!activeQuests.Contains(questToStart)) {
             questToStart.Begin();
@@ -99,11 +113,12 @@ public class QuestManager : MonoBehaviour
         }
     }
 
+
     /// <summary>
     /// Removes a Quest from the active Quest list.
     /// </summary>
     /// <param name="questToFinish"></param>
-    public void FinishQuest(Quest questToFinish)
+    private void FinishQuest(Quest questToFinish)
     {
         if (activeQuests.Contains(questToFinish)) {
             questToFinish.Finish();
