@@ -13,10 +13,8 @@ public class TeleportationField : MonoBehaviour {
 
     public IEnumerator Teleport(Transform player)
     {
-        float seconds = FadeToBlack.instance.fadeSpeed;
-
         StartCoroutine(FadeToBlack.instance.FadeTo());
-        yield return new WaitForSeconds(seconds);
+        yield return new WaitForSeconds(0.5f);
 
         player.position = teleportTo.transform.position;
         player.rotation = teleportTo.transform.rotation;
