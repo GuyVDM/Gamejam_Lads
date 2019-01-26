@@ -13,10 +13,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   texts:
   - name: 
-    _Text: This looks clean enough
+    _Text: 'This looks clean enough...
+
+      Or does it???'
     settings:
-      dialogueSpeed: 0.05
+      dialogueSpeed: 0.02
       useWhitespaceDelay: 0
       whiteSpaceTime: 0
+      hasChoices: 0
+      choices: {fileID: 0}
       useSoundWhenAllCaps: 0
   functionToCallAfterDialogue: {fileID: 0}
