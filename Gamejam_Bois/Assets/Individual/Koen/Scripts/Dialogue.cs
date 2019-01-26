@@ -16,6 +16,10 @@ public class Dialogue : ScriptableObject {
         public bool useWhitespaceDelay;
         public float whiteSpaceTime;
 
+        [Header("Choices:")]
+        public bool hasChoices = false;
+        public ScriptableObjectListenerChoices choices;
+
         [Header("Others:")]
         public bool useSoundWhenAllCaps;
     }

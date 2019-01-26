@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class DialogueManager : MonoBehaviour {
@@ -8,6 +9,7 @@ public class DialogueManager : MonoBehaviour {
     public static DialogueManager diaManager;
 
     [Header("UI Settings:")]
+    [SerializeField] private Button[] buttons;
     [SerializeField] private GameObject sign;
     [SerializeField] private Animator textbox;
     [SerializeField] private TextMeshProUGUI chatbox_Text;
@@ -64,6 +66,9 @@ public class DialogueManager : MonoBehaviour {
     /// </summary>
     internal void LoadDialogue(Dialogue _NewDialogue) {
         if(currentDialogue == null) {
+            foreach(Button _Button in buttons) {
+                _Button.gameObject.SetActive(false);
+            }
             sign.SetActive(false);
             textbox.SetBool("State", true);
             GameManager.gameManager.gameIsBusy = true;
@@ -77,9 +82,28 @@ public class DialogueManager : MonoBehaviour {
         characterIndex = 0;
         timeBase = currentDialogue.texts[dialoguePageIndex].settings.dialogueSpeed; //Sets up the speed to load the dialogue at;
         chatbox_Text.text = "";
+
+        if (currentDialogue.texts[dialoguePageIndex].settings.hasChoices == true && currentDialogue.texts[dialoguePageIndex].settings.choices != null) {
+            print("We found it");
+            foreach (Button _Button in buttons) {
+                _Button.gameObject.SetActive(true);
+            }
+
+            buttons[0].onClick.RemoveAllListeners();
+                buttons[0].onClick.AddListener(delegate { currentDialogue.texts[dialoguePageIndex].settings.choices.ActivateFunction(false); });
+
+                buttons[1].onClick.RemoveAllListeners();
+                buttons[1].onClick.AddListener(delegate { currentDialogue.texts[dialoguePageIndex].settings.choices.ActivateFunction(true); });
+        }
     }
 
     private void NextChatbox() {
+        if (currentDialogue != null) {
+            if (currentDialogue.texts[dialoguePageIndex].settings.hasChoices == true && currentDialogue.texts[dialoguePageIndex].settings.choices != null) {
+                return;
+            }
+        }
+
         if(dialoguePageIndex >= currentDialogue.texts.Count - 1) { //If there are more chatboxes to be loaded;
                 EndDialogue(); //If there is no more dialogue to be loaded;
                 return;
@@ -103,7 +127,7 @@ public class DialogueManager : MonoBehaviour {
         }
     }
 
-    private void EndDialogue() {
+    internal void EndDialogue() {
         if (currentDialogue != null) { //If there is dialogue to end;
             sign.SetActive(false);
 

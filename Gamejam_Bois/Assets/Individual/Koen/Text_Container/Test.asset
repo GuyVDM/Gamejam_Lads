@@ -18,6 +18,8 @@ MonoBehaviour:
       dialogueSpeed: 0.05
       useWhitespaceDelay: 0
       whiteSpaceTime: 0
+      hasChoices: 0
+      choices: {fileID: 0}
       useSoundWhenAllCaps: 0
   - name: Box_Text_002
     _Text: Sample. Sample.
@@ -25,12 +27,18 @@ MonoBehaviour:
       dialogueSpeed: 0.05
       useWhitespaceDelay: 0
       whiteSpaceTime: 0
+      hasChoices: 0
+      choices: {fileID: 0}
       useSoundWhenAllCaps: 0
   - name: Box_Text_003
-    _Text: Sample. Sample. Sample.
+    _Text: 'Choose
+
+'
     settings:
       dialogueSpeed: 0.05
       useWhitespaceDelay: 0
       whiteSpaceTime: 0
+      hasChoices: 1
+      choices: {fileID: 0}
       useSoundWhenAllCaps: 0
   functionToCallAfterDialogue: {fileID: 0}

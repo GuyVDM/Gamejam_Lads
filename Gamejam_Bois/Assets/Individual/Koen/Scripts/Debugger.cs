@@ -22,4 +22,8 @@ public class Debugger : MonoBehaviour {
     public void LoadDialogueExtern() {
         DialogueManager.diaManager.LoadDialogue(testDialogue[loadIndex]);
     }
+
+    public void DebugConsole(string _Message) {
+        print(_Message);
+    }
 }
