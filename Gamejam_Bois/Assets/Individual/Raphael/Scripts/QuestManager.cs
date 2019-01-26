@@ -118,18 +118,25 @@ public class QuestManager : MonoBehaviour
     /// Removes a Quest from the active Quest list.
     /// </summary>
     /// <param name="questToFinish"></param>
-    private void FinishQuest(Quest questToFinish, bool _Failed = false)
+    private void FinishQuest(Quest questToFinish)
     {
         if (activeQuests.Contains(questToFinish)) {
             questToFinish.Finish();
             StartCoroutine(Unload(FindQuest(questToFinish.nextQuestID)));
             activeQuests.Remove(questToFinish);
-            if(_Failed == false)
             UIManager.instance.SetQuestUI(UIManager.instance.questNameText.text, "Completed!", true);
-                else
+        }
+    }
+
+    private void FinishQuestFailed(Quest questToFinish) {
+        if (activeQuests.Contains(questToFinish)) {
+            questToFinish.Finish();
+            StartCoroutine(Unload(FindQuest(questToFinish.nextQuestID)));
+            activeQuests.Remove(questToFinish);
             UIManager.instance.SetQuestUI(UIManager.instance.questNameText.text, "Failed!", true);
         }
     }
+
 
     private IEnumerator Unload(Quest _NewQuest) {
         yield return new WaitForSeconds(UIManager.questUIScreenTime);
