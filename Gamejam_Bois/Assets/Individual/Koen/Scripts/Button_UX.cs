@@ -10,4 +10,8 @@ public class Button_UX : MonoBehaviour, IPointerEnterHandler {
         public void OnPointerEnter(PointerEventData eventData) {
             GetComponent<AudioSource>().PlayOneShot((AudioClip)Resources.Load("Button_Over"));
         }
+
+        public void Press() {
+        GetComponent<AudioSource>().PlayOneShot((AudioClip)Resources.Load("Button_Press"));
+        }
 }
