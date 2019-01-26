@@ -28,12 +28,14 @@ public class ScriptableObjectListenerChoices : MonoBehaviour {
         switch(_Choice) {
             case true:
                 DialogueManager.diaManager.EndDialogue();
+                if(functionsAccepted != null)
                 foreach (UnityEvent _Function in functionsAccepted)
                     _Function.Invoke();
                 break;
 
             case false:
                 DialogueManager.diaManager.EndDialogue();
+                if(functionsDenied != null)
                 foreach (UnityEvent _Function in functionsDenied)
                     _Function.Invoke();
                 break;
