@@ -11,7 +11,12 @@ public class Dialogue : ScriptableObject {
     public struct DialogueSettings {
         [Header("Dialogue Settings:")]
         public float dialogueSpeed;
+
+        [Header("White Space:")]
         public bool useWhitespaceDelay;
+        public float whiteSpaceTime;
+
+        [Header("Others:")]
         public bool useSoundWhenAllCaps;
     }
 
