@@ -9,6 +9,8 @@ public class CharacterController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (GameManager.gameManager.gameIsBusy == true) return;
+
         Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
 
         myAnim.SetFloat("Horizontal", movement.x);

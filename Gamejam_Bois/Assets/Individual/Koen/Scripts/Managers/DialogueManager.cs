@@ -134,6 +134,7 @@ public class DialogueManager : MonoBehaviour {
             if (currentDialogue.functionToCallAfterDialogue != null) //If there is a function to call;
             currentDialogue.functionToCallAfterDialogue.ActivateFunction(); //Activate function;
             currentDialogue = null; //Reset the dialogue;
+            GameManager.gameManager.gameIsBusy = false;
             chatbox_Text.text = "";
             characterIndex = 0;
             dialoguePageIndex = 0;
