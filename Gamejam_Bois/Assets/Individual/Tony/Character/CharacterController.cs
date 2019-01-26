@@ -2,19 +2,47 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterController : MonoBehaviour {
+public class CharacterController : MonoBehaviour
+{
 
-	public Animator myAnim { get { return GetComponent<Animator>(); } }
+    public Animator myAnim { get { return GetComponent<Animator>(); } }
 
     private void FixedUpdate()
     {
-        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical"), 0);
-    
+        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
+
         myAnim.SetFloat("Horizontal", movement.x);
         myAnim.SetFloat("Vertical", movement.y);
         myAnim.SetFloat("Magnitude", movement.magnitude);
 
-
-        transform.position += movement *3* Time.deltaTime;
+        if (Input.GetKey(KeyCode.A))
+        {
+            myAnim.SetBool("Left", true);
+            myAnim.SetBool("Right", false);
+            myAnim.SetBool("Up", false);
+            myAnim.SetBool("Down", false);
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            myAnim.SetBool("Left", false);
+            myAnim.SetBool("Right", true);
+            myAnim.SetBool("Up", false);
+            myAnim.SetBool("Down", false);
+        }
+        else if (Input.GetKey(KeyCode.W))
+        {
+            myAnim.SetBool("Left", false);
+            myAnim.SetBool("Right", false);
+            myAnim.SetBool("Up", true);
+            myAnim.SetBool("Down", false);
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            myAnim.SetBool("Left", false);
+            myAnim.SetBool("Right", false);
+            myAnim.SetBool("Up", false);
+            myAnim.SetBool("Down", true);
+        }
+            transform.position += movement * Time.deltaTime;
     }
 }
