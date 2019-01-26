@@ -29,6 +29,7 @@ public class DialogueManager : MonoBehaviour {
     #region Manager Initialization
     private void Start() {
         InitializeManager(); //Sets up the manager;
+        sign.SetActive(false);
     }
 
     private void InitializeManager() {
@@ -69,7 +70,6 @@ public class DialogueManager : MonoBehaviour {
             foreach(Button _Button in buttons) {
                 _Button.gameObject.SetActive(false);
             }
-            sign.SetActive(false);
             textbox.SetBool("State", true);
             GameManager.gameManager.gameIsBusy = true;
             currentDialogue = _NewDialogue; //Sets up new dialogue to read;
@@ -123,13 +123,11 @@ public class DialogueManager : MonoBehaviour {
                     return;
                 }
             }
-                sign.SetActive(true);
         }
     }
 
     internal void EndDialogue() {
         if (currentDialogue != null) { //If there is dialogue to end;
-            sign.SetActive(false);
 
             if (currentDialogue.functionToCallAfterDialogue != null) //If there is a function to call;
             currentDialogue.functionToCallAfterDialogue.ActivateFunction(); //Activate function;
