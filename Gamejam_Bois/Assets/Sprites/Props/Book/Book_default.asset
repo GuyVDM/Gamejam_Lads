@@ -13,7 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   texts:
   - name: 
-    _Text: I guess I could read something right now...
+    _Text: 'This book has been pretty great so far,
+
+      though i''m not sure if i am in the mood for it.'
     settings:
       dialogueSpeed: 0.02
       useWhitespaceDelay: 0
@@ -22,7 +24,7 @@ MonoBehaviour:
       choices: {fileID: 0}
       useSoundWhenAllCaps: 0
   - name: 
-    _Text: nah.
+    _Text: Nah, i think i'll pass on it today.
     settings:
       dialogueSpeed: 0.02
       useWhitespaceDelay: 0
