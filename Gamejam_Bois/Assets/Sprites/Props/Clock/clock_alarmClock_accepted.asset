@@ -9,11 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 340caa0dc07aa7049b76522acbadca44, type: 3}
-  m_Name: Clock_default
+  m_Name: clock_alarmClock_accepted
   m_EditorClassIdentifier: 
   texts:
   - name: 
-    _Text: Probably my worst enemy.
+    _Text: You turned the alarm clock off.
     settings:
       dialogueSpeed: 0.05
       useWhitespaceDelay: 0
