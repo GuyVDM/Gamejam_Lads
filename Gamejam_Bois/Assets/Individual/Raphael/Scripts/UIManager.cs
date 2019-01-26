@@ -34,9 +34,11 @@ public class UIManager : MonoBehaviour {
         SetQuestUI(questName, questDiscription, true);
     }
 
-    private void SetQuestUI(string _Name, string _Description, bool _State) {
+    public void SetQuestUI(string _Name, string _Description, bool _State) {
         questNameText.text = _Name;
         questDiscriptionText.text = _Description;
+
+        if(_State != questMessageAnimator.GetBool("State"))
         questMessageAnimator.SetBool("State", _State);
     }
 }

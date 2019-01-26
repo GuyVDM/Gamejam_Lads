@@ -33,5 +33,5 @@ public class Dialogue : ScriptableObject {
 
     [Tooltip("Invokes function after dialogue, if assigned.")]
     [Header("Function Settings:")]
-    public UnityEvent functionToCallAfterDialogue;
+    public ScriptableObjectListener functionToCallAfterDialogue;
 }

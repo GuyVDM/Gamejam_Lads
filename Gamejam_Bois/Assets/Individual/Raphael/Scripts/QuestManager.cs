@@ -9,6 +9,7 @@ public class QuestManager : MonoBehaviour
     [System.Serializable]
     public class Quest
     {
+        public string nextQuestID;
         public string questName;
         public string questDisplayName;
         public string questDiscription;
@@ -104,8 +105,21 @@ public class QuestManager : MonoBehaviour
     /// <param name="questToFinish"></param>
     public void FinishQuest(Quest questToFinish)
     {
-        questToFinish.Finish();
-        activeQuests.Remove(questToFinish);
-        UIManager.instance.SendQuestMessage("", "Completed!");
+        if (activeQuests.Contains(questToFinish)) {
+            questToFinish.Finish();
+            StartCoroutine(Unload(FindQuest(questToFinish.nextQuestID)));
+            activeQuests.Remove(questToFinish);
+            UIManager.instance.SetQuestUI(UIManager.instance.questNameText.text, "Completed!", true);
+        }
+    }
+
+    private IEnumerator Unload(Quest _NewQuest) {
+        yield return new WaitForSeconds(UIManager.questUIScreenTime);
+        UIManager.instance.SetQuestUI(UIManager.instance.questNameText.text, "Completed!", false);
+
+        if (_NewQuest != null) {
+            yield return new WaitForSeconds(UIManager.questUIScreenTime);
+            StartQuest(_NewQuest);
+        }
     }
 }
