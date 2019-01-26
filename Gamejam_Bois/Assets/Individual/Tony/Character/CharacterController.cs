@@ -6,7 +6,7 @@ public class CharacterController : MonoBehaviour {
 
 	public Animator myAnim { get { return GetComponent<Animator>(); } }
 
-    private void Update()
+    private void FixedUpdate()
     {
         Vector3 movement = new Vector3(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical"), 0);
     

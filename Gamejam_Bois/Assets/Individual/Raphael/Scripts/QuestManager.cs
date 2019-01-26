@@ -9,10 +9,10 @@ public class QuestManager : MonoBehaviour
     [System.Serializable]
     public class Quest
     {
-        public string nextQuestID;
         public string questName;
         public string questDisplayName;
         public string questDiscription;
+        public string nextQuestID;
         [SerializeField]
         private bool isActive;
         [SerializeField]
@@ -49,7 +49,7 @@ public class QuestManager : MonoBehaviour
         }
 
 
-        StartQuest(FindQuest("Woke"));
+        StartQuest(allQuests[0]);
     }
 
     /// <summary>
