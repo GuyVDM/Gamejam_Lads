@@ -12,24 +12,32 @@ public class InteractionManager : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.E))
             Interact();
+
+        GetRayDirection();
     }
 
     private void Interact()
     {
-        hit = Physics2D.Raycast(transform.position, getRayDirection());
-        if (hit.transform.GetComponent<InteractableObject>())
-            print("plassertje");
+        hit = Physics2D.Raycast(transform.position, toReturn);
+
+        if (hit.transform != null)
+        {
+            if (hit.transform.GetComponent<InteractableObject>() != null)
+            {
+                hit.transform.GetComponent<InteractableObject>().OnInteraction();
+            }
+        }
     }
 
-    private Vector3 getRayDirection()
+    private Vector3 GetRayDirection()
     {
-        if (myAnim.GetFloat("Horizontal") < 0)
+        if (Input.GetAxis("Horizontal") < 0)
             toReturn = Vector3.left;
-        else if (myAnim.GetFloat("Horizontal") > 0)
+        else if (Input.GetAxis("Horizontal") > 0)
             toReturn = Vector3.right;
-        else if (myAnim.GetFloat("Vertical") > 0)
+        else if (Input.GetAxis("Vertical") > 0)
             toReturn = Vector3.up;
-        else if (myAnim.GetFloat("Vertical") < 0)
+        else if (Input.GetAxis("Vertical") < 0)
             toReturn = Vector3.down;
         return toReturn;
     }
