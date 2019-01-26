@@ -41,11 +41,11 @@ public class DialogueManager : MonoBehaviour {
     private void Update() {
         LoadDialogueText();
         SetTimer();
-        TestInputs();
+        Inputs();
     }
 
-    private void TestInputs() {
-        if (Input.GetButtonDown("Fire2") && currentDialogue != null) {
+    private void Inputs() {
+        if (Input.GetButtonDown("Fire1") && currentDialogue != null) {
             NextChatbox();
         }
     }
