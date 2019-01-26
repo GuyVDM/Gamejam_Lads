@@ -15,15 +15,19 @@ MonoBehaviour:
   - name: Player
     _Text: Neef
     settings:
-      dialogueSpeed: 0.05
+      dialogueSpeed: 0.02
       useWhitespaceDelay: 0
       whiteSpaceTime: 0
+      hasChoices: 0
+      choices: {fileID: 0}
       useSoundWhenAllCaps: 0
   - name: Player
     _Text: "Br\xFChr"
     settings:
-      dialogueSpeed: 0.05
+      dialogueSpeed: 0.02
       useWhitespaceDelay: 0
       whiteSpaceTime: 0
+      hasChoices: 0
+      choices: {fileID: 0}
       useSoundWhenAllCaps: 0
   functionToCallAfterDialogue: {fileID: 0}
