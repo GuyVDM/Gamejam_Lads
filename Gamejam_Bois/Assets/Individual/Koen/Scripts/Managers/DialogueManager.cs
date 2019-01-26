@@ -105,8 +105,9 @@ public class DialogueManager : MonoBehaviour {
 
     private void EndDialogue() {
         if (currentDialogue != null) { //If there is dialogue to end;
+            sign.SetActive(false);
+
             if (currentDialogue.functionToCallAfterDialogue != null) //If there is a function to call;
-                sign.SetActive(false);
             currentDialogue.functionToCallAfterDialogue.ActivateFunction(); //Activate function;
             currentDialogue = null; //Reset the dialogue;
             chatbox_Text.text = "";
