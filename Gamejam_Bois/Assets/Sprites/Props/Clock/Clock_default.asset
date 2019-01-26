@@ -13,9 +13,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   texts:
   - name: 
-    _Text: Probably my worst enemy.
+    _Text: 'The ringing in my ears everday because of this thing
+
+      really has put me on edge lately...'
     settings:
-      dialogueSpeed: 0.05
+      dialogueSpeed: 0.02
       useWhitespaceDelay: 0
       whiteSpaceTime: 0
       hasChoices: 0

@@ -13,9 +13,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   texts:
   - name: 
-    _Text: Should I turn the alarm off?
+    _Text: 'The Alarm is really annoying..
+
+      Should i turn it off??'
     settings:
-      dialogueSpeed: 0.05
+      dialogueSpeed: 0.02
       useWhitespaceDelay: 0
       whiteSpaceTime: 0
       hasChoices: 1
