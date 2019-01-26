@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 [RequireComponent(typeof(AudioSource))]
 public class Button_UX : MonoBehaviour, IPointerEnterHandler {
 
+    public AudioSource source;
     public static List<Button_UX> objects;
 
     private void Start() {
@@ -17,10 +18,10 @@ public class Button_UX : MonoBehaviour, IPointerEnterHandler {
     }
 
     public void OnPointerEnter(PointerEventData eventData) {
-            GetComponent<AudioSource>().PlayOneShot((AudioClip)Resources.Load("Button_Over"));
+            source.PlayOneShot((AudioClip)Resources.Load("Button_Over"));
         }
 
     public void Press() {
-        GetComponent<AudioSource>().PlayOneShot((AudioClip)Resources.Load("Button_Press"));
+        source.PlayOneShot((AudioClip)Resources.Load("Button_Press"));
         }
 }
