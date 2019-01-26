@@ -24,7 +24,7 @@ MonoBehaviour:
       choices: {fileID: 0}
       useSoundWhenAllCaps: 0
   - name: 
-    _Text: Nah, i think i'll pass on it today.
+    _Text: Nah, i think i'll pass on it for today.
     settings:
       dialogueSpeed: 0.02
       useWhitespaceDelay: 0
