@@ -22,7 +22,7 @@ MonoBehaviour:
       choices: {fileID: 0}
       useSoundWhenAllCaps: 0
   - name: 
-    _Text: I'd better not wake her up.
+    _Text: I'd better not wake him up.
     settings:
       dialogueSpeed: 0.02
       useWhitespaceDelay: 0
