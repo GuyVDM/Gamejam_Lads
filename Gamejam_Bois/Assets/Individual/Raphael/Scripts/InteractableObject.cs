@@ -15,7 +15,6 @@ public class InteractableObject : MonoBehaviour {
 
     public void OnInteraction()
     {
-        print("meme");
 
         for (int i = 1; i < interactionOptions.Length; i++)
         {

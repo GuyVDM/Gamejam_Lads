@@ -14,13 +14,13 @@ public class TeleportationField : MonoBehaviour {
     public IEnumerator Teleport(Transform player)
     {
         GameManager.gameManager.gameIsBusy = true;
-        StartCoroutine(FadeToBlack.instance.FadeTo());
+        FadeToBlack.instance.StartFadeTo();
         yield return new WaitForSeconds(0.5f);
 
         player.position = teleportTo.transform.position;
         player.rotation = teleportTo.transform.rotation;
 
-        StartCoroutine(FadeToBlack.instance.FadeFrom());
+        FadeToBlack.instance.StartFadeFrom();
         GameManager.gameManager.gameIsBusy = false;
     }
 }

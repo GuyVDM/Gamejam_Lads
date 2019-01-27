@@ -8,13 +8,6 @@ public class LightingManager : MonoBehaviour {
 
     public void StartBlackOut()
     {
-        StartCoroutine(BlackOut());
-    }
-
-    public IEnumerator BlackOut()
-    {
-        yield return new WaitForSeconds(5);
-
         ToggleLight(directionalLight, false);
     }
 
