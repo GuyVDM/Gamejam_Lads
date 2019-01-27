@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+[RequireComponent(typeof(AudioSource))]
 public class DialogueManager : MonoBehaviour {
 
     public static DialogueManager diaManager;
@@ -118,6 +119,7 @@ public class DialogueManager : MonoBehaviour {
             if (dialoguePageIndex <= currentDialogue.texts.Count - 1) {
                 if (currentDialogue.texts[dialoguePageIndex]._Text.Length > chatbox_Text.text.Length && loadNextChar == true) { //If not all text has appeared on the screen yet;
                     chatbox_Text.text += currentDialogue.texts[dialoguePageIndex]._Text[characterIndex];
+                    GetComponent<AudioSource>().PlayOneShot((AudioClip)Resources.Load("Sans"));
                     timer = timeBase;
                     characterIndex++;
                     return;
