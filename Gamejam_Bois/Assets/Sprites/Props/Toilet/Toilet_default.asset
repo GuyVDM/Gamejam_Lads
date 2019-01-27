@@ -15,7 +15,7 @@ MonoBehaviour:
   - name: 
     _Text: I have no desire to urinate at this very point in time.
     settings:
-      dialogueSpeed: 0
+      dialogueSpeed: 0.02
       useWhitespaceDelay: 0
       whiteSpaceTime: 0
       hasChoices: 0

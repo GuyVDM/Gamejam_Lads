@@ -45,7 +45,7 @@ public class DialogueManager : MonoBehaviour {
     }
 
     private void Inputs() {
-        if (Input.GetButtonDown("Fire1") && currentDialogue != null) {
+        if (Input.GetKeyDown(KeyCode.Space) && currentDialogue != null) {
             NextChatbox();
         }
     }

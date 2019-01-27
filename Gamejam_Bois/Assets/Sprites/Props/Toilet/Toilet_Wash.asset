@@ -9,20 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 340caa0dc07aa7049b76522acbadca44, type: 3}
-  m_Name: Dog_default
+  m_Name: Toilet_Wash
   m_EditorClassIdentifier: 
   texts:
   - name: 
-    _Text: He's sleeping soundly.
-    settings:
-      dialogueSpeed: 0.02
-      useWhitespaceDelay: 0
-      whiteSpaceTime: 0
-      hasChoices: 0
-      choices: {fileID: 0}
-      useSoundWhenAllCaps: 0
-  - name: 
-    _Text: I'd better not wake him up.
+    _Text: I don't think I'd get very clean in here.
     settings:
       dialogueSpeed: 0.02
       useWhitespaceDelay: 0

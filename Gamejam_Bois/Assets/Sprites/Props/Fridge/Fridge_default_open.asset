@@ -9,22 +9,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 340caa0dc07aa7049b76522acbadca44, type: 3}
-  m_Name: Dog_default
+  m_Name: Fridge_default_open
   m_EditorClassIdentifier: 
   texts:
   - name: 
-    _Text: He's sleeping soundly.
+    _Text: That's a negative.
     settings:
-      dialogueSpeed: 0.02
-      useWhitespaceDelay: 0
-      whiteSpaceTime: 0
-      hasChoices: 0
-      choices: {fileID: 0}
-      useSoundWhenAllCaps: 0
-  - name: 
-    _Text: I'd better not wake him up.
-    settings:
-      dialogueSpeed: 0.02
+      dialogueSpeed: 0
       useWhitespaceDelay: 0
       whiteSpaceTime: 0
       hasChoices: 0
