@@ -9,6 +9,7 @@ public class PlaySound : MonoBehaviour {
     public string clipName;
 
     public void PlayAudio() {
+        print("lol");
         GetComponent<AudioSource>().PlayOneShot((AudioClip)Resources.Load(clipName));
     }
 }

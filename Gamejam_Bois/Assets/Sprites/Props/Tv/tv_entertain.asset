@@ -9,16 +9,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 340caa0dc07aa7049b76522acbadca44, type: 3}
-  m_Name: Toilet_default
+  m_Name: tv_entertain
   m_EditorClassIdentifier: 
   texts:
   - name: 
-    _Text: I have no desire to urinate at this very point in time.
+    _Text: Should I watch some TV?
     settings:
       dialogueSpeed: 0.02
       useWhitespaceDelay: 0
       whiteSpaceTime: 0
-      hasChoices: 0
+      hasChoices: 1
       choices: {fileID: 0}
       useSoundWhenAllCaps: 0
   functionToCallAfterDialogue: {fileID: 0}
