@@ -2062,7 +2062,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionOptions:
   - onActiveQuest: default
-    dialogue: {fileID: 0}
+    dialogue: {fileID: 11400000, guid: a0883610fa5ddd44ea0f131d242a16fd, type: 2}
   - onActiveQuest: Letter
     dialogue: {fileID: 11400000, guid: d008eaa137ec0eb40aaec2e9298ae40a, type: 2}
 --- !u!61 &320633404
